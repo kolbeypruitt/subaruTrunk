@@ -7,12 +7,12 @@ router.get('/', function(req, res, next) {
 });
 
 router.get('/post_trunk', function(req, res, next) {
-  res.render('post_trunk', { title: 'postings'  });
+  res.render('post_trunk', { title: 'post your trunk'  });
   
 });
 
 router.get('/search_trunk', function(req, res, next) {
-  res.render('search_trunk', { title: 'searching'  });
+  res.render('search_trunk', { title: 'search for a trunk'  });
   
 });
 module.exports = router;

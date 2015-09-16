@@ -3,3 +3,22 @@ extends index
 block content
   h1= title
   p dude this better work
+  form(method='get' action="/post_trunk")
+    h2 Desired Trunk:
+    label Model
+      select
+        option(id="WRX" type="text" class="dropdown") WRX
+        option(id="STI" type="text" class="dropdown") STI
+    label Color
+      select
+        option(id="ISM" class="dropdown") Ice Silver Metallic
+        option(id="WRB" class="dropdown") World Rally Blue
+        option(id="SWP" class="dropdown") Satin White Pearl
+    label Trunk Style
+      select
+        option(id="wing" class="dropdown") STI Wing W/ Backup Camera
+        option(id="wingless" class="dropdown") WRX Wingless
+        option(id="lip" class="dropdown") WRX Lip W/ Backup Camera
+    
+
+  
