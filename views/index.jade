@@ -1,0 +1,9 @@
+extends layout
+
+block content
+  h1= title
+  p We can help you trade your Subaru WRX or STI trunk for the style you fancy.
+  form(method='get' action="/post_trunk")
+    button(class="btn") Post Trunk
+  form(method='get' action="/search_trunk")
+    button(class="btn") Search Trunks
