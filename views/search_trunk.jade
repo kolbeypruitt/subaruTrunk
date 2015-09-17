@@ -5,17 +5,23 @@ block content
   p dude this better work
   form(method='get' action="/post_trunk")
     h2 Desired Trunk:
+    label Year
+      select(class="year")
+        option(id="2016" type="text" class="dropdown") 2016
+        option(id="2015" type="text" class="dropdown") 2015
+        option(id="2014" type="text" class="dropdown") 2014
+        option(id="2013" type="text" class="dropdown") 2013
     label Model
-      select
-        option(id="WRX" type="text" class="dropdown") WRX
-        option(id="STI" type="text" class="dropdown") STI
+      select(class="model")
+        option(id="wrx" type="text" class="dropdown") WRX
+        option(id="sti" type="text" class="dropdown") STI
     label Color
-      select
-        option(id="ISM" class="dropdown") Ice Silver Metallic
-        option(id="WRB" class="dropdown") World Rally Blue
-        option(id="SWP" class="dropdown") Satin White Pearl
+      select(class="color")
+        option(id="ism" class="dropdown") Ice Silver Metallic
+        option(id="wrb" class="dropdown") World Rally Blue
+        option(id="swb" class="dropdown") Satin White Pearl
     label Trunk Style
-      select
+      select(class="style")
         option(id="wing" class="dropdown") STI Wing W/ Backup Camera
         option(id="wingless" class="dropdown") WRX Wingless
         option(id="lip" class="dropdown") WRX Lip W/ Backup Camera
