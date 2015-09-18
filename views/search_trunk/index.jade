@@ -1,9 +1,10 @@
-extends index
+extends layout
 
 block content
   h1= title
-  p dude this better work
-  form(method='get' action="/post_trunk")
+  p search for a trunk here.
+  p= color
+  form(method='get' action="/search_trunk")
     h2 Desired Trunk:
     label Year
       select(class="year")
@@ -25,6 +26,9 @@ block content
         option(id="wing" class="dropdown") STI Wing W/ Backup Camera
         option(id="wingless" class="dropdown") WRX Wingless
         option(id="lip" class="dropdown") WRX Lip W/ Backup Camera
-    
+    select(id="xxx", name="xxxyyy")
+      -for(var i = 0; i<colors.length;i++){
+      option(value="#{i}") colors ->> #{colors}
+      -}
 
   
