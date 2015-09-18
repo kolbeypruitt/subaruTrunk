@@ -51,7 +51,9 @@ function toObject(arr) {
   return colorObj;
 }
 
-console.log(toObject(array))
+var carObj = toObject(array);
+console.log(carObj);
+// console.log(carObj.2004)
 
 
 
