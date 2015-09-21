@@ -6,29 +6,45 @@ block content
   p= color
   form(method='get' action="/search_trunk")
     h2 Desired Trunk:
-    label Year
-      select(class="year")
-        option(id="2016" type="text" class="dropdown") 2016
-        option(id="2015" type="text" class="dropdown") 2015
-        option(id="2014" type="text" class="dropdown") 2014
-        option(id="2013" type="text" class="dropdown") 2013
-    label Model
-      select(class="model")
+    label Year 
+      select(class='year' id="#{i}", name="#{i}")
+        -for(var i = 2016; i>=1994;i--){
+        option(value="#{i}") #{i}
+        -}
+    label Model 
+      select(class="model" disabled='disabled')
         option(id="wrx" type="text" class="dropdown") WRX
         option(id="sti" type="text" class="dropdown") STI
-    label Color
+    label Color 
       select(class="color")
         option(id="ism" class="dropdown") Ice Silver Metallic
         option(id="wrb" class="dropdown") World Rally Blue
         option(id="swb" class="dropdown") Satin White Pearl
-    label Trunk Style
+    label Year 
+      select(class='color' id="#{i}", name="#{i}")
+        -for(var i = 2016; i>=1994;i--){
+        option(value="#{i}") #{i}
+        -}
+    label Trunk Style 
       select(class="style")
         option(id="wing" class="dropdown") STI Wing W/ Backup Camera
         option(id="wingless" class="dropdown") WRX Wingless
         option(id="lip" class="dropdown") WRX Lip W/ Backup Camera
-    select(id="xxx", name="xxxyyy")
-      -for(var i = 0; i<colors.length;i++){
-      option(value="#{i}") colors ->> #{colors}
-      -}
+  form
+    input.name(name='name', placeholder='What is your name?', required='')
+    input.email(name='emailaddress', placeholder='What is your email?', type='email', required='')
+    textarea.message(rows='4', cols='50', name='subject', placeholder='Please enter your message', required='')
+    input.btn(name='submit', type='submit', value='Send')
+
+
+    //- this is the basic year form...
+    //- form(method='get' action="/search_trunk")
+    //-   h2 Desired Trunk:
+    //-   label Year
+    //-     select(class="year")
+    //-       option(id="2016" type="text" class="dropdown") 2016
+    //-       option(id="2015" type="text" class="dropdown") 2015
+    //-       option(id="2014" type="text" class="dropdown") 2014
+
 
   
