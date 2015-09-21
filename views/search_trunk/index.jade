@@ -27,12 +27,19 @@ block content
           option(value="#{i}") #{i}
           -}
       label Trunk Style 
-        select(class="style")
+        select(class="trunkStyle" id='trunkStyle')
           option(id="wing" class="dropdown") STI Wing W/ Backup Camera
           option(id="wingless" class="dropdown") WRX Wingless
           option(id="lip" class="dropdown") WRX Lip W/ Backup Camera
-
-
+    .dropdown
+      label Trunk Style
+        ul
+          li
+            span STI Wing W/ Backup Camera
+          li
+            span WRX Wingless
+          li
+            span WRX Lip W/ Backup Camera
 
 
 
