@@ -4,42 +4,47 @@ block content
   h1= title
   p search for a trunk here.
   p= color
-  form(method='get' action="/search_trunk")
+  form(method='post' action="/search_trunk")
     h2 Desired Trunk:
-    .blur_bg
+    .searchform
       label Year 
         select(class='year' id="#{i}", name="#{i}")
           -for(var i = 2016; i>=1994;i--){
           option(value="#{i}") #{i}
           -}
-      label Model 
-        select(class="model" disabled='disabled')
-          option(id="wrx" type="text" class="dropdown") WRX
-          option(id="sti" type="text" class="dropdown") STI
+      .model
+        label Model 
+          select(class="model" disabled='disabled')
+            option(id="wrx" type="text" class="dropdown") WRX
+            option(id="sti" type="text" class="dropdown") STI
       label Color 
         select(class="color")
           option(id="ism" class="dropdown") Ice Silver Metallic
           option(id="wrb" class="dropdown") World Rally Blue
           option(id="swb" class="dropdown") Satin White Pearl
-      label Year 
-        select(class='color' id="#{i}", name="#{i}")
-          -for(var i = 2016; i>=1994;i--){
-          option(value="#{i}") #{i}
-          -}
-      label Trunk Style 
-        select(class="trunkStyle" id='trunkStyle')
-          option(id="wing" class="dropdown") STI Wing W/ Backup Camera
-          option(id="wingless" class="dropdown") WRX Wingless
-          option(id="lip" class="dropdown") WRX Lip W/ Backup Camera
+      .color
+        label color 
+          select(class='color' id="#{i}", name="#{i}")
+            -for(var i = 2016; i>=1994;i--){
+            option(value="#{i}") #{i}
+            -}
+      .trunkStyle
+        label Trunk Style 
+          select(class="trunkStyle" id='trunkStyle')
+            option(id="wing" class="dropdown") STI Wing W/ Backup Camera
+            option(id="wingless" class="dropdown") WRX Wingless
+            option(id="lip" class="dropdown") WRX Lip W/ Backup Camera
     .dropdown
       label Trunk Style
-        ul
-          li
-            span STI Wing W/ Backup Camera
+        ul(id='search')
+          li(id='search')
+            span(id='search') STI Wing W/ Backup Camera
           li
             span WRX Wingless
           li
             span WRX Lip W/ Backup Camera
+    .search
+      input(type='button' class='submit' value='Search')
 
 
 
