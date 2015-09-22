@@ -8,15 +8,15 @@ block content
     h2 Desired Trunk:
     .searchform
       label Year 
-        select(class='year' id="#{i}", name="#{i}")
+        select(class='year' id='year')
           -for(var i = 2016; i>=1994;i--){
           option(value="#{i}") #{i}
           -}
-      .model
+      .model( disabled=true )
         label Model 
-          select(class="model" disabled='disabled')
-            option(id="wrx" type="text" class="dropdown") WRX
-            option(id="sti" type="text" class="dropdown") STI
+          select(id='model' class="model")
+            option(id="wrx" type="text" class="dropdown" value='WRX') WRX
+            option(id="sti" type="text" class="dropdown" value='STI') STI
       label Color 
         select(class="color")
           option(id="ism" class="dropdown") Ice Silver Metallic
@@ -37,8 +37,8 @@ block content
     .dropdown
       label Trunk Style
         ul(id='search')
-          li(id='search')
-            span(id='search') STI Wing W/ Backup Camera
+          li
+            span STI Wing W/ Backup Camera
           li
             span WRX Wingless
           li
