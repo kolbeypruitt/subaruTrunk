@@ -4,13 +4,19 @@ $(document).ready(function(){
 $("#model").prop('disabled', true);  // find id='model' & create disabled property with value of true.
 $( "#year" ).change(function() {  // when value of elem with id='year' is changed....
   $("#model").prop('disabled', false);  // change model property disabled to false.
+
 });
-$("#model").prop('disabled', true);  // find id='model' & create disabled property with value of true.
-$( "#year" ).change(function() {  // when value of elem with id='year' is changed....
-  $("#model").prop('disabled', false);  // change model property disabled to false.
+$("#color").prop('disabled', true);  // find id='color' & create disabled property with value of true.
+$( "#model" ).change(function() {  // when value of elem with id='year' is changed....
+  $("#color").prop('disabled', false);  // change color property disabled to false.
+  getColors($("#year").val(),$("#model").val())
 });
 
-// $('#tester').html(mywrx)
+$("#trunkStyle").prop('disabled', true);  // find id='trunkStyle' & create disabled property with value of true.
+$( "#color" ).change(function() {  // when value of elem with id='color' is changed....
+  $("#trunkStyle").prop('disabled', false);  // change trunkStyle property disabled to false.
+});
+
 
 
 
@@ -157,24 +163,17 @@ var obj =
 // var mywrx = obj[2015].wrx[0]
 // var startYear = obj[0];
 // var endYear = obj[obj.length];
-
-console.log(obj[2015].wrx.color[0].lngColor)
-
-function getcolors(year,model) {
+var model = 'wrx';
+var year = 2015;
+function getColors(year,model) {
   var out = [];
   for (var i = 0; i < obj[year][model].color.length; i++) {
-    out.push(obj[year][model].color[i].lngColor);
+    // out.push(obj[year][model].color[i].lngColor);
+    $("option").append(obj[year][model].color[i].lngColor).attr().attr('name', obj[year][model].color[i].lngColor)
   }
-  console.log(out)
+  // console.log(out)
+  // console.log(obj[2015].wrx.color[0].lngColor)
 }
-getcolors(2015,'wrx');
+// getcolors(year,model);
 
 
-
-// function getcolors(year,model) {
-//   var out = [];
-//   for (var prop in obj[year].model.color[prop]) {
-//     console.log("obj." + prop + " = " + obj[year].model.color[prop]);
-//   }
-//   return out;
-// }
