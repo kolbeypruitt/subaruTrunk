@@ -17,7 +17,7 @@ router.get('/post_trunk', function(req, res, next) {
 });
 /* GET search trunk page. */
 router.get('/search_trunk', function(req, res, next) {
-  res.render('search_trunk/index', { title: 'Subaru WRX Trunk Swapper'  })
+  res.render('search_trunk/index', { title: 'Subaru WRX Trunk Swapper' })
 });
 
 module.exports = router;

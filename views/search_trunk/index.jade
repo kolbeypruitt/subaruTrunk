@@ -3,7 +3,10 @@ extends layout
 block content
   h1= title
   p search for a trunk here.
-  p= color
+
+  h1(id='tester')
+
+
   form(method='post' action="/search_trunk")
     h2 Desired Trunk:
     .searchform
