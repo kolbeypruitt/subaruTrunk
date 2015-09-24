@@ -65,6 +65,8 @@ var obj =
 }
 
 $(document).ready(function(){
+  // prettyYears();
+  // prettyModels();
   $("#model").prop('disabled', true);  // find id='model' & create disabled property with value of true.
   $( "#year" ).change(function() {  // when value of elem with id='year' is changed....
     $("#model").prop('disabled', false);  // change model property disabled to false.
@@ -74,7 +76,7 @@ $(document).ready(function(){
   $( "#model" ).change(function() {  // when value of elem with id='year' is changed....
     $("#color").prop('disabled', false);  // change color property disabled to false.
     genColors($("#year").val(),$("#model").val())
-    coolColors($("#year").val(),$("#model").val())
+    prettyColors($("#year").val(),$("#model").val())
   });
 
   $("#trunkStyle").prop('disabled', true);  // find id='trunkStyle' & create disabled property with value of true.
@@ -87,16 +89,24 @@ $(document).ready(function(){
 
 function genColors (year, model) {
   $.each(obj[year][model], function(key, value) {   
-     $('#color')
-         .append($("<option></option>")
-         .attr("value",key)
-         .text(key)); 
+    $('#color').append($("<option>" + key + "</option>").attr('id',value))
+  });
+}
+function prettyYears() {
+  $.each(obj, function(key, value) {   
+    $('#prettyYears').append($("<li><span>" + key + "</span></li>"))
   });
 }
 
-function coolColors(year, model) {
+function prettyModels() {
+  $.each(obj[year], function(key, value) {   
+    $('#prettyModels').append($("<li><span>" + key + "</span></li>"))
+  });
+}
+
+function prettyColors(year, model) {
   $.each(obj[year][model], function(key, value) {   
-    $('#search').append($("<li><span>" + key + "</span></li>"))
+    $('#prettyColors').append($("<li><span>" + key + "</span></li>"))
   });
 }
 
