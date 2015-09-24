@@ -6,32 +6,26 @@ block content
 
   h1(id='tester')
 
-
   form(method='post' action="/search_trunk")
     h2 Desired Trunk:
+    
     .searchform
       .year
         label Year 
           select(class='year' id='year')
+            option(value='') select a year
             -for(var i = 2016; i>=1994;i--){
             option(value="#{i}") #{i}
             -}
       .model( disabled=true )
         label Model 
           select(id='model' class="model")
-            option(id="wrx" type="text" class="dropdown" value='wrx') WRX
+            option(id="wrx" type="text" class="dropdown" value='') select model
             option(id="sti" type="text" class="dropdown" value='sti') STI
-      //- label Color 
-      //-   select(class="color")
-      //-     option(id="ism" class="dropdown") Ice Silver Metallic
-      //-     option(id="wrb" class="dropdown") World Rally Blue
-      //-     option(id="swb" class="dropdown") Satin White Pearl
+            option(id="test" type="text" class="dropdown" value='wrx') WRX
       .color
-        label Color 
-          select(class='color' id="color", name="#{i}")
-            //- -for(var i = 0; i<20;i++){
-            //- option( id='coloropt' value="#{i}") #{i}
-            //- -}
+        label Color
+          select(id='color')
       .trunkStyle
         label Trunk Style 
           select(class="trunkStyle" id='trunkStyle')
@@ -49,18 +43,5 @@ block content
     //-         span WRX Lip W/ Backup Camera
     .search
       input(type='button' class='submit' value='Search')
-
-
-
-
-    //- this is the basic year form...
-    //- form(method='get' action="/search_trunk")
-    //-   h2 Desired Trunk:
-    //-   label Year
-    //-     select(class="year")
-    //-       option(id="2016" type="text" class="dropdown") 2016
-    //-       option(id="2015" type="text" class="dropdown") 2015
-    //-       option(id="2014" type="text" class="dropdown") 2014
-
 
   

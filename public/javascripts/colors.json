@@ -1,133 +1,136 @@
-{
-  "2014": {
-    "sti":{
-      "color": {
-        "cbs": {
-          "lngColor":"Crystal Black Silica","code": "#080808"
-        },
-        "swp": {
-          "lngColor":"Satin White Pearl","code": "#EEECE9"
-        },
-        "dgm": {
-          "lngColor":"Dark Gray Metallic","code": "#1C1F23"
-        },
-        "pbs": {
-          "lngColor":"Plasma Blue Silica","code": "#0E162E"
-        },
-        "ism": {
-          "lngColor":"Ice Silver Metallic","code": "#BCC0C4"
-        },
-        "lr": {
-          "lngColor":"Lightning Red","code": "#A72A36"
-        },
-        "wrbp": {
-          "lngColor":"World Rally Blue Pearl","code": "#0E4B82"
-        }
-      }
-    }
-  },
-  "2015": {
-    "wrx":{
-      "color": {
-        "cbs": {
-          "lngColor":"Crystal Black Silica","code": "#080808"
-        },
-        "cwp": {
-          "lngColor":"Crystal White Pearl","code": "#EEECE9"
-        },
-        "dgm": {
-          "lngColor":"Dark Gray Metallic","code": "#1C1F23"
-        },
-        "gbp": {
-          "lngColor":"Lapis Blue Pearl","code": "#2C4C6F"
-        },
-        "ism": {
-          "lngColor":"Ice Silver Metallic","code": "#BCC0C4"
-        },
-        "lr": {
-          "lngColor":"Lightning Red","code": "#A72A36"
-        },
-        "wrbp": {
-          "lngColor":"World Rally Blue Pearl","code": "#0E4B82"
-        }
-      }
-    },
-    "sti":{
-      "color": {
-        "cbs": {
-          "lngColor":"Crystal Black Silica","code": "#080808"
-        },
-        "cwp": {
-          "lngColor":"Crystal White Pearl","code": "#EEECE9"
-        },
-        "dgm": {
-          "lngColor":"Dark Gray Metallic","code": "#1C1F23"
-        },
-        "gbp": {
-          "lngColor":"Lapis Blue Pearl","code": "#2C4C6F"
-        },
-        "ism": {
-          "lngColor":"Ice Silver Metallic","code": "#BCC0C4"
-        },
-        "lr": {
-          "lngColor":"Lightning Red","code": "#A72A36"
-        },
-        "wrbp": {
-          "lngColor":"World Rally Blue Pearl","code": "#0E4B82"
-        }
-      }
-    }
-  },
-  "2016": {
-    "wrx":{
-      "color": {
-        "cbs": {
-          "lngColor":"Crystal Black Silica","code": "#080808"
-        },
-        "cwp": {
-          "lngColor":"Crystal White Pearl","code": "#EEECE9"
-        },
-        "dgm": {
-          "lngColor":"Dark Gray Metallic","code": "#1C1F23"
-        },
-        "gbp": {
-          "lngColor":"Galaxy Blue Pearl","code": "#182D58"
-        },
-        "ism": {
-          "lngColor":"Ice Silver Metallic","code": "#BCC0C4"
-        },
-        "lr": {
-          "lngColor":"Lightning Red","code": "#A72A36"
-        },
-        "wrbp": {
-          "lngColor":"World Rally Blue Pearl","code": "#0E4B82"
-        }
-      }
-    },
-    "sti":{
-      "color": {
-        "cbs": {
-          "lngColor":"Crystal Black Silica","code": "#080808"
-        },
-        "cwp": {
-          "lngColor":"Crystal White Pearl","code": "#EEECE9"
-        },
-        "dgm": {
-          "lngColor":"Dark Gray Metallic","code": "#1C1F23"
-        },
-        "gbp": {
-          "lngColor":"Lapis Blue Pearl","code": "#2C4C6F"
-        },
-        "ism": {
-          "lngColor":"Ice Silver Metallic","code": "#BCC0C4"
-        },
-        "lr": {
-          "lngColor":"Lightning Red","code": "#A72A36"
-        },
-        "wrbp": {
-          "lngColor":"World Rally Blue Pearl","code": "#0E4B82"
-        }
-      }
-    }
-  }
-}
+{'stuff':'IM JSON STUFF'}
+
+
+// {
+//   "2014": {
+//     "sti":{
+//       "color": {
+//         "cbs": {
+//           "lngColor":"Crystal Black Silica","code": "#080808"
+//         },
+//         "swp": {
+//           "lngColor":"Satin White Pearl","code": "#EEECE9"
+//         },
+//         "dgm": {
+//           "lngColor":"Dark Gray Metallic","code": "#1C1F23"
+//         },
+//         "pbs": {
+//           "lngColor":"Plasma Blue Silica","code": "#0E162E"
+//         },
+//         "ism": {
+//           "lngColor":"Ice Silver Metallic","code": "#BCC0C4"
+//         },
+//         "lr": {
+//           "lngColor":"Lightning Red","code": "#A72A36"
+//         },
+//         "wrbp": {
+//           "lngColor":"World Rally Blue Pearl","code": "#0E4B82"
+//         }
+//       }
+//     }
+//   },
+//   "2015": {
+//     "wrx":{
+//       "color": {
+//         "cbs": {
+//           "lngColor":"Crystal Black Silica","code": "#080808"
+//         },
+//         "cwp": {
+//           "lngColor":"Crystal White Pearl","code": "#EEECE9"
+//         },
+//         "dgm": {
+//           "lngColor":"Dark Gray Metallic","code": "#1C1F23"
+//         },
+//         "gbp": {
+//           "lngColor":"Lapis Blue Pearl","code": "#2C4C6F"
+//         },
+//         "ism": {
+//           "lngColor":"Ice Silver Metallic","code": "#BCC0C4"
+//         },
+//         "lr": {
+//           "lngColor":"Lightning Red","code": "#A72A36"
+//         },
+//         "wrbp": {
+//           "lngColor":"World Rally Blue Pearl","code": "#0E4B82"
+//         }
+//       }
+//     },
+//     "sti":{
+//       "color": {
+//         "cbs": {
+//           "lngColor":"Crystal Black Silica","code": "#080808"
+//         },
+//         "cwp": {
+//           "lngColor":"Crystal White Pearl","code": "#EEECE9"
+//         },
+//         "dgm": {
+//           "lngColor":"Dark Gray Metallic","code": "#1C1F23"
+//         },
+//         "gbp": {
+//           "lngColor":"Lapis Blue Pearl","code": "#2C4C6F"
+//         },
+//         "ism": {
+//           "lngColor":"Ice Silver Metallic","code": "#BCC0C4"
+//         },
+//         "lr": {
+//           "lngColor":"Lightning Red","code": "#A72A36"
+//         },
+//         "wrbp": {
+//           "lngColor":"World Rally Blue Pearl","code": "#0E4B82"
+//         }
+//       }
+//     }
+//   },
+//   "2016": {
+//     "wrx":{
+//       "color": {
+//         "cbs": {
+//           "lngColor":"Crystal Black Silica","code": "#080808"
+//         },
+//         "cwp": {
+//           "lngColor":"Crystal White Pearl","code": "#EEECE9"
+//         },
+//         "dgm": {
+//           "lngColor":"Dark Gray Metallic","code": "#1C1F23"
+//         },
+//         "gbp": {
+//           "lngColor":"Galaxy Blue Pearl","code": "#182D58"
+//         },
+//         "ism": {
+//           "lngColor":"Ice Silver Metallic","code": "#BCC0C4"
+//         },
+//         "lr": {
+//           "lngColor":"Lightning Red","code": "#A72A36"
+//         },
+//         "wrbp": {
+//           "lngColor":"World Rally Blue Pearl","code": "#0E4B82"
+//         }
+//       }
+//     },
+//     "sti":{
+//       "color": {
+//         "cbs": {
+//           "lngColor":"Crystal Black Silica","code": "#080808"
+//         },
+//         "cwp": {
+//           "lngColor":"Crystal White Pearl","code": "#EEECE9"
+//         },
+//         "dgm": {
+//           "lngColor":"Dark Gray Metallic","code": "#1C1F23"
+//         },
+//         "gbp": {
+//           "lngColor":"Lapis Blue Pearl","code": "#2C4C6F"
+//         },
+//         "ism": {
+//           "lngColor":"Ice Silver Metallic","code": "#BCC0C4"
+//         },
+//         "lr": {
+//           "lngColor":"Lightning Red","code": "#A72A36"
+//         },
+//         "wrbp": {
+//           "lngColor":"World Rally Blue Pearl","code": "#0E4B82"
+//         }
+//       }
+//     }
+//   }
+// }
