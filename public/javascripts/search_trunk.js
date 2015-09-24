@@ -1,25 +1,4 @@
 
-$(document).ready(function(){
-  $("#model").prop('disabled', true);  // find id='model' & create disabled property with value of true.
-  $( "#year" ).change(function() {  // when value of elem with id='year' is changed....
-    $("#model").prop('disabled', false);  // change model property disabled to false.
-  });
-
-  $("#color").prop('disabled', true);  // find id='color' & create disabled property with value of true.
-  $( "#model" ).change(function() {  // when value of elem with id='year' is changed....
-    $("#color").prop('disabled', false);  // change color property disabled to false.
-    console.log($("#model").val())
-    genColors($("#year").val(),$("#model").val())
-  });
-
-  $("#trunkStyle").prop('disabled', true);  // find id='trunkStyle' & create disabled property with value of true.
-  $( "#color" ).change(function() {  // when value of elem with id='color' is changed....
-    $("#trunkStyle").prop('disabled', false);  // change trunkStyle property disabled to false.
-  });
-
-
-  
-});
 
 var obj = 
 {
@@ -85,14 +64,45 @@ var obj =
   }
 }
 
+$(document).ready(function(){
+  $("#model").prop('disabled', true);  // find id='model' & create disabled property with value of true.
+  $( "#year" ).change(function() {  // when value of elem with id='year' is changed....
+    $("#model").prop('disabled', false);  // change model property disabled to false.
+  });
+
+  $("#color").prop('disabled', true);  // find id='color' & create disabled property with value of true.
+  $( "#model" ).change(function() {  // when value of elem with id='year' is changed....
+    $("#color").prop('disabled', false);  // change color property disabled to false.
+    genColors($("#year").val(),$("#model").val())
+    coolColors($("#year").val(),$("#model").val())
+  });
+
+  $("#trunkStyle").prop('disabled', true);  // find id='trunkStyle' & create disabled property with value of true.
+  $( "#color" ).change(function() {  // when value of elem with id='color' is changed....
+    $("#trunkStyle").prop('disabled', false);  // change trunkStyle property disabled to false.
+  });
+
+});
+
+
 function genColors (year, model) {
   $.each(obj[year][model], function(key, value) {   
      $('#color')
          .append($("<option></option>")
          .attr("value",key)
          .text(key)); 
-});
+  });
 }
+
+function coolColors(year, model) {
+  $.each(obj[year][model], function(key, value) {   
+    $('#search').append($("<li><span>" + key + "</span></li>"))
+  });
+}
+
+
+// $('#color').append($("<option></option>").attr("value",key).text(key));
+
 
 
 

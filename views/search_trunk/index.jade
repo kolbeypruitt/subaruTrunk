@@ -13,11 +13,11 @@ block content
       .year
         label Year 
           select(class='year' id='year')
-            option(value='') select a year
+            option(value='') select year
             -for(var i = 2016; i>=1994;i--){
             option(value="#{i}") #{i}
             -}
-      .model( disabled=true )
+      .model(disabled=true)
         label Model 
           select(id='model' class="model")
             option(id="wrx" type="text" class="dropdown" value='') select model
@@ -29,18 +29,19 @@ block content
       .trunkStyle
         label Trunk Style 
           select(class="trunkStyle" id='trunkStyle')
+            option(class="dropdown") select trunk style
             option(id="wing" class="dropdown") STI Wing W/ Backup Camera
             option(id="wingless" class="dropdown") WRX Wingless
             option(id="lip" class="dropdown") WRX Lip W/ Backup Camera
-    //- .dropdown
-    //-   label Trunk Style
-    //-     ul(id='search')
-    //-       li
-    //-         span STI Wing W/ Backup Camera
-    //-       li
-    //-         span WRX Wingless
-    //-       li
-    //-         span WRX Lip W/ Backup Camera
+    .dropdown
+      label Trunk Style
+        ul(id='search')
+          li
+            span STI Wing W/ Backup Camera
+          li
+            span WRX Wingless
+          li
+            span WRX Lip W/ Backup Camera
     .search
       input(type='button' class='submit' value='Search')
 
