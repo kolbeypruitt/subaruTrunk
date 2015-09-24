@@ -3,3 +3,34 @@ extends layout
 block content
   h1= title
   p post your trunk here.
+  form(method='post' action="/search_trunk")
+    h2 Desired Trunk:
+    .searchformDiv
+      .yearDiv
+        label Year 
+          select(class='year' id='year')
+            option(value='') select year
+            -for(var i = 2016; i>=1994;i--){
+            option(value="#{i}") #{i}
+            -}
+      .modelDiv
+        label Model 
+          select(id='model' class="model")
+            option(id="wrx" type="text" class="dropdown" value='') select model
+            option(id="sti" type="text" class="dropdown" value='sti') STI
+            option(id="test" type="text" class="dropdown" value='wrx') WRX
+      .colorDiv
+        label Color 
+          select(id='color')
+            option(value='') select color
+      .trunkStyleDiv
+        label Trunk Style 
+          select(class="trunkStyle" id='trunkStyle')
+            option(class="dropdown") select trunk style
+            option(id="wing" class="dropdown") STI Wing W/ Backup Camera
+            option(id="wingless" class="dropdown") WRX Wingless
+            option(id="lip" class="dropdown") WRX Lip W/ Backup Camera
+    .search
+      input(type='button' class='submit' value='Search')
+
+  

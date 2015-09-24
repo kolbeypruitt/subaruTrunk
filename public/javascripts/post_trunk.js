@@ -91,26 +91,6 @@ function genColors (year, model) {
     $('#color').append($("<option>" + key + "</option>").attr('id',value))
   });
 }
-function prettyYears() {
-  $.each(obj, function(key, value) {   
-    $('#prettyYears').append($("<li><span>" + key + "</span></li>"))
-  });
-}
-
-function prettyModels() {
-  $.each(obj[year], function(key, value) {   
-    $('#prettyModels').append($("<li><span>" + key + "</span></li>"))
-  });
-}
-
-function prettyColors(year, model) {
-  $.each(obj[year][model], function(key, value) {   
-    $('#prettyColors').append($("<li><span>" + key + "</span></li>"))
-  });
-}
-
-prettyColors($("#year").val(),$("#model").val())
-// $('#color').append($("<option></option>").attr("value",key).text(key));
 
 
 
