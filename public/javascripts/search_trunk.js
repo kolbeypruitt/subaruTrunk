@@ -1,5 +1,3 @@
-
-
 var obj = 
 {
   "2014": {
@@ -65,7 +63,7 @@ var obj =
 }
 
 $(document).ready(function(){
-  // prettyYears();
+  prettyYears();
   // prettyModels();
   $("#model").prop('disabled', true);  // find id='model' & create disabled property with value of true.
   $( "#year" ).change(function() {  // when value of elem with id='year' is changed....
