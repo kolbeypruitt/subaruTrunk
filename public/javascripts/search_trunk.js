@@ -85,9 +85,8 @@ var obj =
   }
 }
 
-function genColors (year) {
-  var selectValues = { "1": "test","2": "test 2" };
-  $.each(obj[2015].wrx, function(key, value) {   
+function genColors (year, model) {
+  $.each(obj[year][model], function(key, value) {   
      $('#color')
          .append($("<option></option>")
          .attr("value",key)
