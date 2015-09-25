@@ -63,48 +63,58 @@ var obj =
 }
 
 $(document).ready(function(){
-  years();
-  $(".modelsDiv, .colorsDiv, .postDiv").hide();
+  year();
+  $(".modelDiv, .colorDiv, .postDiv").hide();
   
 
 });
 
-function years() {
+function year() {
   $.each(obj, function(year) {
-    $('#years').append($("<li " + "id='" + year + "'><span>" + year + "</span></li>"));
+    $('#year').append($("<li " + "id='" + year + "' name='year' value='" + year + "'><span>" + year + "</span></li>"));
       $('#'+year).click(function() {
-        $(".modelsDiv").show();
-        models(year);
-        $(".yearsDiv").empty();
+        $(".modelDiv").show();
+        model(year);
+        $(".yearDiv").empty();
       });
   });
 }
 
-function models(year) {
+function model(year) {
   $.each(obj[year], function(model) {   
-    $('#models').append($("<li " + "id='" + model + "'><span>" + model + "</span></li>"));
+    $('#model').append($("<li " + "id='" + model + "' name='model' value='" + model + "'><span>" + model + "</span></li>"));
       $('#'+model).click(function() {
-        $(".colorsDiv").show();
-        colors(year, model);
-        $(".modelsDiv").empty();
+        $(".colorDiv").show();
+        color(year, model);
+        $(".modelDiv").empty();
       });
   });
 }
 
-function colors(year, model) {
+function color(year, model) {
   $.each(obj[year][model], function(color,code) {
-    $('#colors').append($("<li " + "id='" + rmPound(code) + "'><span>" + color + "</span></li>"));
+    $('#color').append($("<li " + "id='" + rmPound(code) + "' name='color' value='" + color + "'><span>" + color + "</span></li>"));
       $(code).click(function() {
         $(".postDiv").show();
         post();
-        $(".colorsDiv").empty();
+        $(".colorDiv").empty();
       });
   });
 }
 
+// function post() {
+//   $('#post').append($("<li id='postGo'><span>Click Here</span></li>"));
+//   $("#postGo").click(function() {
+//     $("#postForm").submit(function(event) {
+//       alert( "Handler for .submit() called." );
+//       event.preventDefault();
+//     });
+//   });
+// }
+
 function post() {
-  $('#post').append($("<li id='postGo'><span>Click Here</span></li>"));
-  $("#postGo").click(function() {
+  // $('#post').append($("<li id='postGo'><span>Click Here</span></li>"));
+  $("#post").click(function() {
     $("#postForm").submit(function(event) {
       alert( "Handler for .submit() called." );
       event.preventDefault();

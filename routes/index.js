@@ -18,12 +18,13 @@ router.get('/', function(req, res, next) {
 });
 /* GET post trunk page. */
 router.get('/post_trunk', function(req, res, next) {
-  trunksdb.insert({ year:req.body.post_year, model:req.body.post_model, color:req.body.post_color
+  trunksdb.insert({ year:req.body.year, model:req.body.model, color:req.body.color
       },function (err,records) {
+    res.render('post_trunk/index', { title: 'Subaru WRX Trunk Swapper'  });
     console.log(records);
-    console.log(req.body.post_year);
+    console.log(req.body.year);
   });
-  res.render('post_trunk/index', { title: 'Subaru WRX Trunk Swapper'  });
+  
 });
 /* GET search trunk page. */
 router.get('/search_trunk', function(req, res, next) {
