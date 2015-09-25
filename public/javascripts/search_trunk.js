@@ -64,6 +64,7 @@ var obj =
 
 $(document).ready(function(){
   prettyYears();
+  $(".prettyModelsDiv, .prettyColorsDiv, .prettySearch").hide();
   
 
 });
@@ -98,7 +99,7 @@ function prettyModels(year) {
 
 function prettyColors(year, model) {
   $.each(obj[year][model], function(color,code) {
-    $('#prettyColors').append($("<li " + "id='" + stripPound(code) + "'><span>" + color + "</span></li>"));
+    $('#prettyColors').append($("<li " + "id='" + rmPound(code) + "'><span>" + color + "</span></li>"));
       $(code).click(function() {
         alert( "Handler for " + color + " was clicke called." );
         $(".prettyColorsDiv").empty();
@@ -106,13 +107,11 @@ function prettyColors(year, model) {
   });
 }
 
-function stripPound(colorCode) {
+function rmPound(colorCode) {
 // this function just strips the `#` 
 //from the color code so it can be a valid `id` value.
   return colorCode.replace('#','');
 }
-// prettyColors($("#year").val(),$("#model").val())
-// $('#color').append($("<option></option>").attr("value",key).text(key));
 
 
 
