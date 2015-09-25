@@ -80,6 +80,7 @@ function prettyYears() {
       $('#'+year).click(function() {
         prettyModels(year);
         alert( "Handler for " + year + " was clicke called." );
+        $(".prettyYearsDiv").empty();
       });
   });
 }
@@ -90,6 +91,7 @@ function prettyModels(year) {
       $('#'+model).click(function() {
         prettyColors(year, model);
         alert( "Handler for " + model + " was clicke called." );
+        $(".prettyModelsDiv").empty();
       });
   });
 }
@@ -99,6 +101,7 @@ function prettyColors(year, model) {
     $('#prettyColors').append($("<li " + "id='" + stripPound(code) + "'><span>" + color + "</span></li>"));
       $(code).click(function() {
         alert( "Handler for " + color + " was clicke called." );
+        $(".prettyColorsDiv").empty();
       });
   });
 }
