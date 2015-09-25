@@ -69,12 +69,6 @@ $(document).ready(function(){
 
 });
 
-// function prettyYears() {
-//   $.each(obj, function(key) {   
-//     $('#prettyYears').append($("<li><span>" + key + "</span></li>"))
-//   });
-// }
-
 function prettyYears() {
   $.each(obj, function(year) {
     $('#prettyYears').append($("<li " + "id='" + year + "'><span>" + year + "</span></li>"));
