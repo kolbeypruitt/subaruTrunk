@@ -102,23 +102,12 @@ function color(year, model) {
   });
 }
 
-// function post() {
-//   $('#post').append($("<li id='postGo'><span>Click Here</span></li>"));
-//   $("#postGo").click(function() {
-//     $("#postForm").submit(function(event) {
-//       alert( "Handler for .submit() called." );
-//       event.preventDefault();
-//     });
-//   });
-// }
 
 function post() {
   // $('#post').append($("<li id='postGo'><span>Click Here</span></li>"));
-  $("#post").click(function() {
-    $("#postForm").submit(function(event) {
-      alert( "Handler for .submit() called." );
-      event.preventDefault();
-    });
+  $(".postDiv").click(function() {
+    alert('it works')
+    $("#postForm").submit();
   });
 }
 
@@ -127,5 +116,6 @@ function rmPound(colorCode) {
 //from the color code so it can be a valid `id` value.
   return colorCode.replace('#','');
 }
+
 
 

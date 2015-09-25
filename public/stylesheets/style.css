@@ -44,4 +44,9 @@ body {
     max-height: 50px;
     /* Any number larger than the actual height of the li works */ }
 
+.postDiv:hover label {
+  background: #FF9110;
+  color: #FFF;
+  /* Any number larger than the actual height of the li works */ }
+
 /*# sourceMappingURL=style.css.map */
