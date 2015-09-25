@@ -1,5 +1,7 @@
 var express = require('express');
 var router = express.Router();
+var db = require('monk')('localhost/trunkswap');
+var trunks = db.get('trunks');
 
 
 
