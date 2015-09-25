@@ -16,16 +16,35 @@ router.get('/', function(req, res, next) {
   })
   res.render('index', { title: 'Subaru WRX Trunk Swapper'  });
 });
-/* GET post trunk page. */
+
+/* GET trunk posting page. */
 router.get('/post_trunk', function(req, res, next) {
+  res.render('post_trunk/index', {
+    title: 'Subaru WRX Trunk Swapper',
+    message: 'Please post your trunk here.'
+  });
+});
+
+/* POST trunk. */
+router.post('/posted', function(req, res, next) {
   trunksdb.insert({ year:req.body.year, model:req.body.model, color:req.body.color
       },function (err,records) {
-    res.render('post_trunk/index', { title: 'Subaru WRX Trunk Swapper'  });
     console.log(records);
-    console.log(req.body.year);
+    console.log(req.body);
   });
-  
+  res.render('post_trunk/index', {
+    title:'Subaru WRX Trunk Swapper',
+    message:'Thank you for posting.',
+    year:req.body.year,
+    model:req.body.model,
+    color:req.body.color
+  });
 });
+
+
+
+
+
 /* GET search trunk page. */
 router.get('/search_trunk', function(req, res, next) {
   res.render('search_trunk/index', { title: 'Subaru WRX Trunk Swapper' })

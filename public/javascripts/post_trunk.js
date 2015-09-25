@@ -104,17 +104,14 @@ function color(year, model) {
 
 
 function post() {
-  // $('#post').append($("<li id='postGo'><span>Click Here</span></li>"));
   $(".postDiv").click(function() {
-    alert('it works')
     $("#postForm").submit();
   });
 }
 
-function rmPound(colorCode) {
-// this function just strips the `#` 
-//from the color code so it can be a valid `id` value.
-  return colorCode.replace('#','');
+function rmPound(colorCode) {        // this function just strips the `#` 
+  return colorCode.replace('#','');  //from the color code so it can be a valid `id` value.
+
 }
 
 

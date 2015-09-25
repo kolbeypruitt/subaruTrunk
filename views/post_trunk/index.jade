@@ -3,8 +3,8 @@ extends layout
 block content
   .dropdown
     h1= title
-    p search for a trunk here.
-    form(id='postForm' method='post' action="/post_trunk")
+    p= message
+    form(id='postForm' method='post' action="/posted")
       .yearDiv
         label Year 
           ul(id='year')
