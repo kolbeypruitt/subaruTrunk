@@ -65,33 +65,21 @@ var obj =
 $(document).ready(function(){
   prettyYears();
   // prettyModels();
-  $("#model").prop('disabled', true);  // find id='model' & create disabled property with value of true.
-  $( "#year" ).change(function() {  // when value of elem with id='year' is changed....
-    $("#model").prop('disabled', false);  // change model property disabled to false.
-  });
-
-  $("#color").prop('disabled', true);  // find id='color' & create disabled property with value of true.
-  $( "#model" ).change(function() {  // when value of elem with id='year' is changed....
-    $("#color").prop('disabled', false);  // change color property disabled to false.
-    genColors($("#year").val(),$("#model").val())
-  });
-
-  $("#trunkStyle").prop('disabled', true);  // find id='trunkStyle' & create disabled property with value of true.
-  $( "#color" ).change(function() {  // when value of elem with id='color' is changed....
-    $("#trunkStyle").prop('disabled', false);  // change trunkStyle property disabled to false.
-  });
 
 });
 
+// function prettyYears() {
+//   $.each(obj, function(key) {   
+//     $('#prettyYears').append($("<li><span>" + key + "</span></li>"))
+//   });
+// }
 
-function genColors (year, model) {
-  $.each(obj[year][model], function(key, value) {   
-    $('#color').append($("<option>" + key + "</option>").attr('id',value))
-  });
-}
 function prettyYears() {
-  $.each(obj, function(key, value) {   
-    $('#prettyYears').append($("<li><span>" + key + "</span></li>"))
+  $.each(obj, function(year) {
+    $('#prettyYears').append($("<li " + "id='" + year + "'><span>" + year + "</span></li>"));
+      $('#'+year).click(function() {
+      alert( "Handler for " + year + " was clicke called." );
+    });
   });
 }
 
@@ -107,7 +95,7 @@ function prettyColors(year, model) {
   });
 }
 
-prettyColors($("#year").val(),$("#model").val())
+// prettyColors($("#year").val(),$("#model").val())
 // $('#color').append($("<option></option>").attr("value",key).text(key));
 
 
