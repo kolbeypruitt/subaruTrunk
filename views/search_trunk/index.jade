@@ -1,11 +1,10 @@
 extends layout
 
 block content
-  h1= title
-  p search for a trunk here.
-  h2 Desired Trunk:
-  form(method='post' action="/search_trunk")
-    .dropdown
+  .dropdown
+    h1= title
+    p search for a trunk here.
+    form(id='searchForm' method='post' action="/search_trunk")
       .prettyYearsDiv
         label Year 
           ul(id='prettyYears')
@@ -15,9 +14,6 @@ block content
       .prettyColorsDiv
         label Color 
           ul(id='prettyColors')
-      .prettySearch
+      .prettySearchDiv
         label Search
-          ul
-      input(type='button' class='submit' value='Search Trunks')
-
-  
+          ul(id='prettySearch')

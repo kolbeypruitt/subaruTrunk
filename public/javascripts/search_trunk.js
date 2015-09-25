@@ -64,7 +64,7 @@ var obj =
 
 $(document).ready(function(){
   prettyYears();
-  $(".prettyModelsDiv, .prettyColorsDiv, .prettySearch").hide();
+  $(".prettyModelsDiv, .prettyColorsDiv, .prettySearchDiv").hide();
   
 
 });
@@ -79,8 +79,8 @@ function prettyYears() {
   $.each(obj, function(year) {
     $('#prettyYears').append($("<li " + "id='" + year + "'><span>" + year + "</span></li>"));
       $('#'+year).click(function() {
+        $(".prettyModelsDiv").show();
         prettyModels(year);
-        alert( "Handler for " + year + " was clicke called." );
         $(".prettyYearsDiv").empty();
       });
   });
@@ -90,8 +90,8 @@ function prettyModels(year) {
   $.each(obj[year], function(model) {   
     $('#prettyModels').append($("<li " + "id='" + model + "'><span>" + model + "</span></li>"));
       $('#'+model).click(function() {
+        $(".prettyColorsDiv").show();
         prettyColors(year, model);
-        alert( "Handler for " + model + " was clicke called." );
         $(".prettyModelsDiv").empty();
       });
   });
@@ -101,9 +101,20 @@ function prettyColors(year, model) {
   $.each(obj[year][model], function(color,code) {
     $('#prettyColors').append($("<li " + "id='" + rmPound(code) + "'><span>" + color + "</span></li>"));
       $(code).click(function() {
-        alert( "Handler for " + color + " was clicke called." );
+        $(".prettySearchDiv").show();
+        prettySearch();
         $(".prettyColorsDiv").empty();
       });
+  });
+}
+
+function prettySearch() {
+  $('#prettySearch').append($("<li id='searchGo'><span>Click Here</span></li>"));
+  $("#searchGo").click(function() {
+    $("#searchForm").submit(function(event) {
+      alert( "Handler for .submit() called." );
+      event.preventDefault();
+    });
   });
 }
 
