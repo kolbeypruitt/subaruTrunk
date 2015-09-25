@@ -63,33 +63,59 @@ var obj =
 }
 
 $(document).ready(function(){
-  // prettyYears();
-  // prettyModels();
-  $("#model").prop('disabled', true);  // find id='model' & create disabled property with value of true.
-  $( "#year" ).change(function() {  // when value of elem with id='year' is changed....
-    $("#model").prop('disabled', false);  // change model property disabled to false.
-  });
-
-  $("#color").prop('disabled', true);  // find id='color' & create disabled property with value of true.
-  $( "#model" ).change(function() {  // when value of elem with id='year' is changed....
-    $("#color").prop('disabled', false);  // change color property disabled to false.
-    genColors($("#year").val(),$("#model").val())
-  });
-
-  $("#trunkStyle").prop('disabled', true);  // find id='trunkStyle' & create disabled property with value of true.
-  $( "#color" ).change(function() {  // when value of elem with id='color' is changed....
-    $("#trunkStyle").prop('disabled', false);  // change trunkStyle property disabled to false.
-  });
+  prettyYears();
+  $(".prettyModelsDiv, .prettyColorsDiv, .prettyPostDiv").hide();
+  
 
 });
 
-
-function genColors (year, model) {
-  $.each(obj[year][model], function(key, value) {   
-    $('#color').append($("<option>" + key + "</option>").attr('id',value))
+function prettyYears() {
+  $.each(obj, function(year) {
+    $('#prettyYears').append($("<li " + "id='" + year + "'><span>" + year + "</span></li>"));
+      $('#'+year).click(function() {
+        $(".prettyModelsDiv").show();
+        prettyModels(year);
+        $(".prettyYearsDiv").empty();
+      });
   });
 }
 
+function prettyModels(year) {
+  $.each(obj[year], function(model) {   
+    $('#prettyModels').append($("<li " + "id='" + model + "'><span>" + model + "</span></li>"));
+      $('#'+model).click(function() {
+        $(".prettyColorsDiv").show();
+        prettyColors(year, model);
+        $(".prettyModelsDiv").empty();
+      });
+  });
+}
 
+function prettyColors(year, model) {
+  $.each(obj[year][model], function(color,code) {
+    $('#prettyColors').append($("<li " + "id='" + rmPound(code) + "'><span>" + color + "</span></li>"));
+      $(code).click(function() {
+        $(".prettyPostDiv").show();
+        prettyPost();
+        $(".prettyColorsDiv").empty();
+      });
+  });
+}
+
+function prettyPost() {
+  $('#prettyPost').append($("<li id='postGo'><span>Click Here</span></li>"));
+  $("#postGo").click(function() {
+    $("#postForm").submit(function(event) {
+      alert( "Handler for .submit() called." );
+      event.preventDefault();
+    });
+  });
+}
+
+function rmPound(colorCode) {
+// this function just strips the `#` 
+//from the color code so it can be a valid `id` value.
+  return colorCode.replace('#','');
+}
 
 

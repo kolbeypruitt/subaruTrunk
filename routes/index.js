@@ -18,9 +18,11 @@ router.get('/', function(req, res, next) {
 });
 /* GET post trunk page. */
 router.get('/post_trunk', function(req, res, next) {
-  trunksdb.insert({},function (err,records) {
+  trunksdb.insert({ year:req.body.post_year, model:req.body.post_model, color:req.body.post_color
+      },function (err,records) {
     console.log(records);
-  })
+    console.log(req.body.post_year);
+  });
   res.render('post_trunk/index', { title: 'Subaru WRX Trunk Swapper'  });
 });
 /* GET search trunk page. */
