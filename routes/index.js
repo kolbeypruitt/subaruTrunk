@@ -1,7 +1,7 @@
 var express = require('express');
 var router = express.Router();
 var db = require('monk')('localhost/trunkswap');
-var trunks = db.get('trunks');
+var trunksdb = db.get('trunks'); // this is the call to the collection trunks in db trunkswap
 
 
 
@@ -11,10 +11,16 @@ var trunks = db.get('trunks');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
+  trunksdb.find({},function (err,records) {
+    console.log(records);
+  })
   res.render('index', { title: 'Subaru WRX Trunk Swapper'  });
 });
 /* GET post trunk page. */
 router.get('/post_trunk', function(req, res, next) {
+  trunksdb.insert({},function (err,records) {
+    console.log(records);
+  })
   res.render('post_trunk/index', { title: 'Subaru WRX Trunk Swapper'  });
 });
 /* GET search trunk page. */
