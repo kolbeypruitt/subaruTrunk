@@ -64,7 +64,7 @@ var obj =
 
 $(document).ready(function(){
   prettyYears();
-  // prettyModels();
+  
 
 });
 
@@ -78,23 +78,36 @@ function prettyYears() {
   $.each(obj, function(year) {
     $('#prettyYears').append($("<li " + "id='" + year + "'><span>" + year + "</span></li>"));
       $('#'+year).click(function() {
-      alert( "Handler for " + year + " was clicke called." );
-    });
+        prettyModels(year);
+        alert( "Handler for " + year + " was clicke called." );
+      });
   });
 }
 
-function prettyModels() {
-  $.each(obj[year], function(key, value) {   
-    $('#prettyModels').append($("<li><span>" + key + "</span></li>"))
+function prettyModels(year) {
+  $.each(obj[year], function(model) {   
+    $('#prettyModels').append($("<li " + "id='" + model + "'><span>" + model + "</span></li>"));
+      $('#'+model).click(function() {
+        prettyColors(year, model);
+        alert( "Handler for " + model + " was clicke called." );
+      });
   });
 }
 
 function prettyColors(year, model) {
-  $.each(obj[year][model], function(key, value) {   
-    $('#prettyColors').append($("<li><span>" + key + "</span></li>"))
+  $.each(obj[year][model], function(color,code) {
+    $('#prettyColors').append($("<li " + "id='" + stripPound(code) + "'><span>" + color + "</span></li>"));
+      $(code).click(function() {
+        alert( "Handler for " + color + " was clicke called." );
+      });
   });
 }
 
+function stripPound(colorCode) {
+// this function just strips the `#` 
+//from the color code so it can be a valid `id` value.
+  return colorCode.replace('#','');
+}
 // prettyColors($("#year").val(),$("#model").val())
 // $('#color').append($("<option></option>").attr("value",key).text(key));
 
