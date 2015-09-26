@@ -2,6 +2,8 @@ extends layout
 
 block content
   h1= title
+  .dropdown
+  a(href='http://localhost:3000/post_trunk?') stuff
   p We can help you trade your Subaru WRX or STI trunk for the style you fancy.
   form(method='get' action="/post_trunk")
     button(class="btn") Post Trunk
