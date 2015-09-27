@@ -63,47 +63,47 @@ var obj =
 }
 
 $(document).ready(function(){
-  prettyYears();
-  $(".prettyModelsDiv, .prettyColorsDiv, .prettySearchDiv").hide();
+  Years();
+  $(".ModelsDiv, .ColorsDiv, .SearchDiv").hide();
   
 
 });
 
-function prettyYears() {
+function Years() {
   $.each(obj, function(year) {
-    $('#prettyYears').append($("<li " + "id='" + year + "'><span>" + year + "</span></li>"));
+    $('#Years').append($("<li " + "id='" + year + "'><span>" + year + "</span></li>"));
       $('#'+year).click(function() {
-        $(".prettyModelsDiv").show();
-        prettyModels(year);
-        $(".prettyYearsDiv").empty();
+        $(".ModelsDiv").show();
+        Models(year);
+        $(".YearsDiv").empty();
       });
   });
 }
 
-function prettyModels(year) {
+function models(year) {
   $.each(obj[year], function(model) {   
-    $('#prettyModels').append($("<li " + "id='" + model + "'><span>" + model + "</span></li>"));
+    $('#models').append($("<li " + "id='" + model + "'><span>" + model + "</span></li>"));
       $('#'+model).click(function() {
-        $(".prettyColorsDiv").show();
-        prettyColors(year, model);
-        $(".prettyModelsDiv").empty();
+        $(".colorsDiv").show();
+        Colors(year, model);
+        $(".modelsDiv").empty();
       });
   });
 }
 
-function prettyColors(year, model) {
+function colors(year, model) {
   $.each(obj[year][model], function(color,code) {
-    $('#prettyColors').append($("<li " + "id='" + rmPound(code) + "'><span>" + color + "</span></li>"));
+    $('#colors').append($("<li " + "id='" + rmPound(code) + "'><span>" + color + "</span></li>"));
       $(code).click(function() {
-        $(".prettySearchDiv").show();
-        prettySearch();
-        $(".prettyColorsDiv").empty();
+        $(".searchDiv").show();
+        Search();
+        $(".colorsDiv").empty();
       });
   });
 }
 
-function prettySearch() {
-  $('#prettySearch').append($("<li id='searchGo'><span>Click Here</span></li>"));
+function search() {
+  $('#search').append($("<li id='searchGo'><span>Click Here</span></li>"));
   $("#searchGo").click(function() {
     $("#searchForm").submit(function(event) {
       alert( "Handler for .submit() called." );
