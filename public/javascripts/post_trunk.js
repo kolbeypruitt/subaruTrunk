@@ -114,5 +114,8 @@ function rmPound(colorCode) {        // this function just strips the `#`
 
 }
 
+$('')
+
+
 
 

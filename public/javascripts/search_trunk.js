@@ -63,19 +63,19 @@ var obj =
 }
 
 $(document).ready(function(){
-  Years();
-  $(".ModelsDiv, .ColorsDiv, .SearchDiv").hide();
+  years();
+  $(".modelsDiv, .colorsDiv, .searchDiv").hide();
   
 
 });
 
-function Years() {
+function years() {
   $.each(obj, function(year) {
-    $('#Years').append($("<li " + "id='" + year + "'><span>" + year + "</span></li>"));
+    $('#years').append($("<li " + "id='" + year + "'><span>" + year + "</span></li>"));
       $('#'+year).click(function() {
-        $(".ModelsDiv").show();
-        Models(year);
-        $(".YearsDiv").empty();
+        $(".modelsDiv").show();
+        models(year);
+        $(".yearsDiv").empty();
       });
   });
 }
@@ -85,7 +85,7 @@ function models(year) {
     $('#models').append($("<li " + "id='" + model + "'><span>" + model + "</span></li>"));
       $('#'+model).click(function() {
         $(".colorsDiv").show();
-        Colors(year, model);
+        colors(year, model);
         $(".modelsDiv").empty();
       });
   });
@@ -96,8 +96,8 @@ function colors(year, model) {
     $('#colors').append($("<li " + "id='" + rmPound(code) + "'><span>" + color + "</span></li>"));
       $(code).click(function() {
         $(".searchDiv").show();
-        Search();
         $(".colorsDiv").empty();
+        Search();
       });
   });
 }
