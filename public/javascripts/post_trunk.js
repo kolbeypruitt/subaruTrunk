@@ -75,7 +75,7 @@ function year() {
       $('#'+year).click(function() {
         $(".modelDiv").show();
         model(year);
-        $(".yearDiv").empty();
+        // $(".yearDiv").empty();
       });
   });
 }
@@ -86,7 +86,7 @@ function model(year) {
       $('#'+model).click(function() {
         $(".colorDiv").show();
         color(year, model);
-        $(".modelDiv").empty();
+        // $(".modelDiv").empty();
       });
   });
 }
@@ -97,7 +97,7 @@ function color(year, model) {
       $(code).click(function() {
         $(".postDiv").show();
         post();
-        $(".colorDiv").empty();
+        // $(".colorDiv").empty();
       });
   });
 }
@@ -114,7 +114,6 @@ function rmPound(colorCode) {        // this function just strips the `#`
 
 }
 
-$('')
 
 
 
